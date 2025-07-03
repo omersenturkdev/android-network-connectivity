@@ -35,6 +35,10 @@ class MainActivity : AppCompatActivity() {
             override fun onLost(network: Network) {
                 Toast.makeText(this@MainActivity, "Network Disconnected", Toast.LENGTH_LONG).show()
             }
+
+            override fun onAvailable(network: Network) {
+                Toast.makeText(this@MainActivity, "Connected Network", Toast.LENGTH_LONG).show()
+            }
         }
 
         val networkRequest = NetworkRequest.Builder()
