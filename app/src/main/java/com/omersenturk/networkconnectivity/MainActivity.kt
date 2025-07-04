@@ -47,4 +47,9 @@ class MainActivity : AppCompatActivity() {
 
         connectivityManager.registerNetworkCallback(networkRequest,networkCallback)
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        connectivityManager.unregisterNetworkCallback(networkCallback)
+    }
 }
