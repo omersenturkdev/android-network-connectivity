@@ -9,14 +9,16 @@ import android.widget.Toast
 
 class NetworkChangeReciver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
-        val connectivityManager = context?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val connectivityManager =
+            context?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val network = connectivityManager.activeNetwork
         val capabilities = connectivityManager.getNetworkCapabilities(network)
-        val isConnected = capabilities?.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) == true
+        val isConnected =
+            capabilities?.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) ?: false
 
-        val message = if(isConnected){
+        val message = if (isConnected) {
             "Connected Network"
-        }else{
+        } else {
             "Network Disconnected"
         }
 
