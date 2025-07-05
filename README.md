@@ -1,20 +1,29 @@
-# Android Network Connectivity
+# 📶 Android Network Connectivity
 
-A simple and lightweight Android utility to monitor network connectivity status in real-time.  
-It detects when the device connects or disconnects from the internet (Wi-Fi, mobile data, Ethernet, etc.) and notifies via Toast messages.
+A simple and lightweight Android utility to monitor **network connectivity status** in real-time.  
+This utility uses a `BroadcastReceiver` to detect when the device connects or disconnects from the internet (Wi-Fi, mobile data, Ethernet, etc.) and notifies the user via **Toast messages**.
 
-## Features
+---
 
-- Real-time internet connectivity monitoring
-- Supports multiple network types (Wi-Fi, Cellular, Ethernet)
-- Easy to integrate into any Android project
-- Minimal and clean Kotlin code
+## ✨ Features
 
-## How to Use
+- 🔄 **Real-time connectivity monitoring**  
+  Listens for network changes using a `BroadcastReceiver`.
 
-1. Add the necessary permission to your `AndroidManifest.xml`:
+- 🌐 **Supports multiple network types**  
+  Detects Wi-Fi, Cellular, Ethernet, and more.
 
-```xml
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+- 🧼 **Minimal and clean Kotlin code**  
+  Written in Kotlin with simplicity and efficiency in mind.
 
-Call checkNetwork function in MainActivity
+- 🔌 **Easy integration**  
+  Can be seamlessly integrated into any Android project.
+
+---
+
+## 📋 Requirements
+
+- **Minimum Android Version:** API Level 21+ (Android 5.0 Lollipop and above)  
+- **Permissions Required:**  
+  ```xml
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
