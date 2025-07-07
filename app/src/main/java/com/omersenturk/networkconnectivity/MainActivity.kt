@@ -10,7 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
-    private val networkChangeReciver = NetworkChangeReciver()
+    private val networkChangeReceiver = NetworkChangeReceiver()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -21,13 +21,13 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         registerReceiver(
-            networkChangeReciver,
+            networkChangeReceiver,
             IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
         )
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        unregisterReceiver(networkChangeReciver)
+        unregisterReceiver(networkChangeReceiver)
     }
 }
